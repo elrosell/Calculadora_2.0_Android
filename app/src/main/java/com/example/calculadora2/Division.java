@@ -1,24 +1,18 @@
 package com.example.calculadora2;
 
-import android.os.Bundle;
+public class Division {
+    int datito1, datito2;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-public class Division extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_division);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+    public void setDatito1(int datito1) {
+        this.datito1 = datito1;
     }
+
+    public void setDatito2(int datito2) {
+        this.datito2 = datito2;
+    }
+
+    public int divisioncita(){
+        return datito1 / datito2;
+    }
+
 }

@@ -1,24 +1,17 @@
 package com.example.calculadora2;
 
-import android.os.Bundle;
+public class Resta {
+    int datito1, datito2;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+    public void setDatito1(int datito1) {
+        this.datito1 = datito1;
+    }
 
-public class Resta extends AppCompatActivity {
+    public void setDatito2(int datito2) {
+        this.datito2 = datito2;
+    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_resta);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+    public int restita(){
+        return datito1 - datito2;
     }
 }
