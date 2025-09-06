@@ -1,17 +1,50 @@
 package com.example.calculadora2;
 
-public class Resta {
-    int datito1, datito2;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
 
-    public void setDatito1(int datito1) {
-        this.datito1 = datito1;
+public class Resta extends AppCompatActivity{
+
+    EditText textito1, textito2;
+    TextView resultado;
+    Button restita, regresar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_resta);
+        textito1 = findViewById(R.id.textito1);
+        textito2 = findViewById(R.id.textito2);
+        resultado = findViewById(R.id.resultado);
+        restita = findViewById(R.id.restita);
+        regresar = findViewById(R.id.regresar);
+
+        restita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String valor1 = textito1.getText().toString();
+                String valor2 = textito2.getText().toString();
+                if (!valor1.isEmpty() && !valor2.isEmpty()) {
+                    int num1 = Integer.parseInt(valor1);
+                    int num2 = Integer.parseInt(valor2);
+                    int res = num1 - num2;
+                    resultado.setText(String.valueOf(res));
+                }
+            }
+        });
+
+        regresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
-    public void setDatito2(int datito2) {
-        this.datito2 = datito2;
-    }
-
-    public int restita(){
-        return datito1 - datito2;
-    }
 }
